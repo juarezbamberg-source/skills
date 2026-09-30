@@ -1,0 +1,23 @@
+name: validar-manifests
+
+# CI de conformidade do Padrão de Manifests da Metacortex.
+# A validação em si vive no workflow reutilizável validar.yml.
+
+on:
+  pull_request:
+    paths:
+      - "manifests/**"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/**"
+      - "README.md"
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    name: Validar manifests
+    uses: ./.github/workflows/validar.yml

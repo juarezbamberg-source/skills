@@ -1,0 +1,114 @@
+name: deploy
+
+# Entrega contínua dos manifests da nyx-api.
+# O mesmo commit validado flui dev -> stg -> prod (promoção por commit).
+#
+#   validar      — workflow reutilizável (testes + 3 camadas)
+#   deploy-dev   — cluster kind efêmero + kubectl apply -k manifests/dev
+#   deploy-stg   — automático após dev
+#   deploy-prod  — environment "prod" com revisor obrigatório (gate manual)
+#
+# Os Pods ficam ImagePullBackOff por design: registry.metacortex.io é o
+# registry fictício do padrão. O que se prova aqui é a aterrissagem dos
+# objetos no API server — a verificação de saúde real seria o rollout status.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "manifests/**"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/deploy.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-nyx
+  cancel-in-progress: false
+
+jobs:
+  validar:
+    name: Validar manifests
+    uses: ./.github/workflows/validar.yml
+
+  deploy-dev:
+    name: Deploy dev
+    needs: validar
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: dev
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Criar cluster kind
+        uses: helm/kind-action@v1.15.0
+
+      - name: Aplicar manifests de dev
+        run: kubectl apply -k manifests/dev
+
+      - name: Verificar aterrissagem dos objetos
+        run: |
+          set -e
+          kubectl -n nyx-dev get namespace nyx-dev >/dev/null
+          kubectl -n nyx-dev get serviceaccount,configmap,secret,deployment,service
+          echo "--- réplicas (regra 2.3: 1 em dev) ---"
+          test "$(kubectl -n nyx-dev get deploy nyx-api -o jsonpath='{.spec.replicas}')" = "1"
+          echo "--- sem PDB fora de prod (regra 2.5) ---"
+          test -z "$(kubectl -n nyx-dev get pdb --no-headers 2>/dev/null)"
+          echo "dev OK: objetos aterrissaram e as regras de ambiente conferem"
+
+  deploy-stg:
+    name: Deploy stg
+    needs: deploy-dev
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: stg
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Criar cluster kind
+        uses: helm/kind-action@v1.15.0
+
+      - name: Aplicar manifests de stg
+        run: kubectl apply -k manifests/stg
+
+      - name: Verificar aterrissagem dos objetos
+        run: |
+          set -e
+          kubectl -n nyx-stg get serviceaccount,configmap,secret,deployment,service
+          test "$(kubectl -n nyx-stg get deploy nyx-api -o jsonpath='{.spec.replicas}')" = "1"
+          test -z "$(kubectl -n nyx-stg get pdb --no-headers 2>/dev/null)"
+          echo "stg OK: objetos aterrissaram e as regras de ambiente conferem"
+
+  deploy-prod:
+    name: Deploy prod (aguarda aprovação)
+    needs: deploy-stg
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: prod
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Criar cluster kind
+        uses: helm/kind-action@v1.15.0
+
+      - name: Aplicar manifests de prod
+        run: kubectl apply -k manifests/prod
+
+      - name: Verificar aterrissagem dos objetos
+        run: |
+          set -e
+          kubectl -n nyx-prod get serviceaccount,configmap,secret,deployment,service,pdb
+          echo "--- réplicas (regra 2.3: >= 2 em prod) ---"
+          test "$(kubectl -n nyx-prod get deploy nyx-api -o jsonpath='{.spec.replicas}')" = "2"
+          echo "--- PDB com minAvailable 1 (regra 2.5) ---"
+          test "$(kubectl -n nyx-prod get pdb nyx-api -o jsonpath='{.spec.minAvailable}')" = "1"
+          echo "--- rollout strategy (regra 2.4) ---"
+          test "$(kubectl -n nyx-prod get deploy nyx-api -o jsonpath='{.spec.strategy.type}')" = "RollingUpdate"
+          test "$(kubectl -n nyx-prod get deploy nyx-api -o jsonpath='{.spec.strategy.rollingUpdate.maxUnavailable}')" = "0"
+          echo "prod OK: objetos aterrissaram e as regras de ambiente conferem"
