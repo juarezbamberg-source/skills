@@ -1,6 +1,6 @@
 ---
 name: tcc-ava-ia
-description: This skill should be used when the user asks to "tcc: plataforma ava com ia" — skill importada da plataforma anterior (legado, sem fluxo executado anexado). Estrutura e validação para TCC de AVA inteligente com análise comportamental
+description: This skill should be used when the user asks to "estruturar meu TCC", "analisar capítulo do TCC", "validar metodologia do TCC", "quais referências adicionar", "criar diagrama do TCC", "checklist do TCC", or mentions TCC de plataforma AVA inteligente com IA (RAG, visão computacional, análise comportamental, metacognição). Fornece checklists por capítulo, metodologia em 4 fases, métricas e validação técnica+pedagógica. NÃO usar para trabalhos comuns do SENAC (usar avaliador-trabalhos-senac) nem para análise de conformidade textual (usar analise-textual-academica).
 version: 0.1.0
 ---
 

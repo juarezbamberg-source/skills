@@ -1,6 +1,6 @@
 ---
 name: planejamento-aulas-informatica
-description: This skill should be used when the user asks to "planejar aula", "gerar plano de aula", "criar exercícios", "roteiro de slides", "análise de lacunas", "guia noob" para curso técnico em informática (Senac) — ou citar UC5/UC6/UC7/UC8 de redes. Gera planejamento, exercícios contextualizados, roteiro de slides, análise de lacunas e guia noob com vídeos. As competências oficiais das UCs (indicadores, conhecimentos, habilidades) ficam em references/ (progressive disclosure); o fluxo pedagógico está neste corpo.
+description: This skill should be used when the user asks to "planejar aula", "plano de aula", "gerar exercícios práticos", "roteiro de slides", "análise de lacunas do conteúdo", "guia noob para alunos", "material didático para o técnico em informática", or mentions UC5/UC6/UC7/UC8 de redes (Senac). Gera planejamento (Word/PDF), exercícios contextualizados em TI, roteiro de slides, análise de lacunas com fontes e guia noob com vídeos. Competências oficiais das UCs em references/. NÃO usar para criar provas (usar criar-provas-senac) nem para avaliar entregas (usar avaliador-trabalhos-senac).
 version: 0.2.0
 ---
 

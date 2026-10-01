@@ -1,6 +1,6 @@
 ---
 name: padrao-manifests-metacortex
-description: This skill should be used when the user asks to "gerar manifests Kubernetes no padrão da casa", "criar deployment/service para um projeto no padrão Metacortex", "conferir/validar um manifesto contra o padrão da Metacortex", "revisar esse manifesto antes de subir", "por que esse manifesto foi barrado pela Seraph", ou mencionar "padrão de manifests da Metacortex". Dois modos: escrita (gera manifests novos conformes, descobrindo porta/probe/credenciais lendo o projeto) e conferência (aponta cada violação com regra e severidade). Regras mecânicas vão no script embutido; o que exige ler o projeto segue a instrução passo a passo.
+description: This skill should be used when the user asks to "gerar manifests Kubernetes no padrão da casa", "criar deployment/service para um projeto no padrão Metacortex", "conferir/validar um manifesto contra o padrão da Metacortex", "revisar esse manifesto antes de subir", "por que esse manifesto foi barrado pela Seraph", ou mencionar "padrão de manifests da Metacortex". Dois modos: escrita (gera manifests novos conformes, descobrindo porta/probe/credenciais lendo o projeto) e conferência (aponta cada violação com regra e severidade). NÃO usar para manifests fora do padrão Metacortex (usar tecnicas/containers-docker-kubernetes) nem para triagem de incidente em cluster (usar triagem-cluster-metacortex). Regras mecânicas vão no script embutido; o que exige ler o projeto segue a instrução passo a passo.
 version: 1.0.0
 ---
 

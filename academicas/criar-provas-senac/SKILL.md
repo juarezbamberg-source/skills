@@ -1,10 +1,10 @@
 ---
 name: criar-provas-senac
-description: This skill should be used when the user asks for: Cria provas SENAC: brainstorm, versões, gabarito, rubrica e entrega por e-mail — skill da plataforma Adapta ONE (perfil do Juarez, ativa no perfil). Importada para este repo em 2026-10-01. Progressive disclosure: regras globais no corpo, procedimentos detalhados sob demanda.
+description: This skill should be used when the user asks to "criar prova", "montar avaliação", "fazer prova para a turma", "gerar versões de prova por grupo", "prova prática com rubrica", "gabarito do professor", or mentions criar avaliações para o SENAC (técnico, qualquer disciplina). Cria provas com brainstorm inicial (skill brainstorm/), versões por grupo, gabarito separado, rubrica e ficha de assinatura; entrega por e-mail. NÃO usar para corrigir/avaliar trabalhos já entregues (usar avaliador-trabalhos-senac) nem para planejar aulas (usar planejamento-aulas-informatica).
 version: 0.2.0
 ---
 
-> **Origem**: plataforma Adapta ONE (perfil do Juarez). Importada em 2026-10-01. Referencia a skill #Brainstorm como etapa inicial obrigatória (aqui: `brainstorm/`, na raiz deste repo).
+> **Origem**: plataforma Adapta ONE (perfil do Juarez). Importada em 2026-10-01. Referencia a skill `brainstorm/` como etapa inicial obrigatória (aqui: `brainstorm/`, na raiz deste repo).
 
 # provas_SENAC — Criação de Provas para o SENAC
 
@@ -13,9 +13,9 @@ version: 0.2.0
 - Manter a metodologia validada: brainstorm inicial, versões por grupo, gabarito do professor, rubrica, ficha de assinatura e entrega por e-mail.
 
 ## 2. Regras globais (sempre ativas)
-- INICIAR SEMPRE pela skill filha #Brainstorm para validar os dados iniciais.
+- INICIAR SEMPRE pela skill `brainstorm/` (raiz deste repo) para validar os dados iniciais.
 - Aplicar progressive disclosure: carregar procedimentos específicos somente quando a etapa exigir; manter referências detalhadas sob demanda.
-- Skill pai chama skill filha: #Brainstorm é obrigatória no início; outras filhas (#Avaliador UC8, #Análise Textual, #Planejamento de Aulas) somente se o contexto da prova exigir.
+- Skill pai chama skill filha: `brainstorm/` é obrigatória no início; outras filhas (#Avaliador UC8, #Análise Textual, #Planejamento de Aulas) somente se o contexto da prova exigir.
 - ENTREGÁVEIS: a prova deve ser documentada e entregue POR E-MAIL e DENTRO DO PRAZO COMBINADO EM SALA DE AULA.
 - Nunca incluir gabarito na versão do aluno.
 - Nomes de arquivos claros: prova_V1, prova_V2... (alunos) e prova_V1_prof, prova_V2_prof... (professor).
@@ -29,7 +29,7 @@ version: 0.2.0
 ## 4. Procedimentos (carregar sob demanda)
 
 ### 4.1 Brainstorm inicial (obrigatório)
-- Chamar a skill #Brainstorm e validar: turma, UC, disciplina, conteúdo didático, nº de alunos, formação de grupos, formato da prova, ferramenta e prazo de entrega.
+- Chamar a skill `brainstorm/` e validar: turma, UC, disciplina, conteúdo didático, nº de alunos, formação de grupos, formato da prova, ferramenta e prazo de entrega.
 - Não avançar enquanto houver lacuna fundamental.
 
 ### 4.2 Estrutura padrão da prova

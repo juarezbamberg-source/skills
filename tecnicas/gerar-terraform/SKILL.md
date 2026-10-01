@@ -1,6 +1,6 @@
 ---
 name: gerar-terraform
-description: This skill should be used when the user asks to "gerar arquivos terraform" — skill importada da plataforma anterior (legado, sem fluxo executado anexado). Estrutura modular e reutilizável de Terraform para qualquer infraestrutura
+description: This skill should be used when the user asks to "criar infraestrutura como código", "montar o Terraform do projeto", "gerar main.tf/providers.tf", "provisionar EKS/RDS/S3/VPC", "padronizar estrutura Terraform entre projetos", or mentions IaC em Terraform para qualquer cloud (AWS, GCP, Azure). Gera estrutura modular reutilizável (providers, variables, main, outputs, locals, tfvars.example, modules). NÃO usar para manifests Kubernetes (usar padrao-manifests-metacortex) nem para exercício acadêmico completo com CI/CD (usar exercicio-devops-cloud-ia).
 version: 0.1.0
 ---
 

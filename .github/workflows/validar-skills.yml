@@ -1,0 +1,79 @@
+name: Validar skills
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  frontmatter:
+    name: Frontmatter das skills
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checar name/description/version em todo SKILL.md
+        run: |
+          python3 - <<'EOF'
+          from pathlib import Path
+          import sys
+          erros = []
+          for f in sorted(Path('.').rglob('SKILL.md')):
+              s = f.read_text(encoding='utf-8')
+              if not s.startswith('---'):
+                  erros.append(f"{f}: sem frontmatter")
+                  continue
+              fm = s.split('---')[1]
+              for campo in ('name:', 'description:', 'version:'):
+                  if campo not in fm:
+                      erros.append(f"{f}: falta {campo}")
+              # description com gatilho mínimo
+              if 'description:' in fm and len(fm.split('description:')[1].split('\nname:')[0]) < 150:
+                  erros.append(f"{f}: description curta demais (<150 chars) — gatilho de descoberta fraco")
+          if erros:
+              print('\n'.join(erros)); sys.exit(1)
+          print(f"OK: {len(list(Path('.').rglob('SKILL.md')))} skills com frontmatter válido")
+          EOF
+
+      - name: Checar referências entre skills (caminhos existem)
+        run: |
+          python3 - <<'EOF'
+          from pathlib import Path
+          import re, sys
+          erros = []
+          for f in sorted(Path('.').rglob('SKILL.md')):
+              s = f.read_text(encoding='utf-8')
+              # links de references internos
+              for m in re.findall(r'\]\((references/[^)]+)\)', s):
+                  alvo = f.parent / m
+                  if not alvo.exists():
+                      erros.append(f"{f}: reference inexistente {m}")
+              # referências a skills irmãs (pasta/)
+              for m in re.findall(r'`(?:[a-z-]+/)?([a-z]+-[a-z-]+)/`', s):
+                  if '(raiz deste repo)' in s or True:
+                      alvo = Path(m)
+                      if m not in ('references',) and not alvo.exists() and not (f.parent.parent / m).exists():
+                          # só é erro se parecer ser skill do repo e não existir
+                          if '-' in m and len(m) > 5:
+                              erros.append(f"{f}: possível skill inexistente referenciada: {m}")
+          if erros:
+              print('\n'.join(erros)); sys.exit(1)
+          print("OK: referências internas válidas")
+          EOF
+
+  testes:
+    name: Testes dos validadores
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar pyyaml
+        run: pip install pyyaml
+
+      - name: Rodar testes do validador de manifests
+        run: python3 padrao-manifests-metacortex/tests/test_validador.py

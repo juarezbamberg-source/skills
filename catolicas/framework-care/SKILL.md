@@ -1,6 +1,6 @@
 ---
 name: framework-care
-description: This skill should be used when the user asks to "gerar pregação", "estruturar pregação com framework CARE", "preparar adoração ao Santíssimo Sacramento", "adoro-te devote", "meditações para adoração", ou mencionar o framework C-A-R-E para conteúdo católico (Contexto, Análise/A arquitetura, Reflexão/Roteiro, Encerramento/Execução). Duas aplicações: pregações a partir das leituras do dia e adoração com meditações contemplativas + músicas. O framework comum está neste corpo; os roteiros específicos de cada aplicação ficam em references/ (progressive disclosure).
+description: This skill should be used when the user asks to "gerar pregação", "homilia para o domingo", "preparar adoração ao Santíssimo Sacramento", "adoro-te devote", "meditações para adoração", "pregação com as leituras do dia", or mentions framework C-A-R-E para conteúdo católico (Contexto, Análise/Arquitetura, Reflexão/Roteiro, Encerramento/Execução). Três aplicações: pregação (leituras do dia), adoração (meditações + músicas, 45-50 min) e homilia (10 min, 900-1.100 palavras). O framework comum está neste corpo; os roteiros específicos ficam em references/ (progressive disclosure). NÃO usar para brainstorm de ideias gerais (usar brainstorm/) — este framework é específico de conteúdo católico falado/cantado.
 version: 0.3.0
 ---
 

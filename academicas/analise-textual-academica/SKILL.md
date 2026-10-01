@@ -1,10 +1,10 @@
 ---
 name: analise-textual-academica
-description: This skill should be used when the user asks for: Valida conformidade textual de entregas acadêmicas conforme regras definidas — skill da plataforma Adapta ONE (perfil do Juarez, ativa no perfil). Importada para este repo em 2026-10-01. Progressive disclosure: regras globais no corpo, procedimentos detalhados sob demanda.
+description: This skill should be used when the user asks to "analisar texto do trabalho", "conformidade textual", "verificar formato do documento acadêmico", "checar regras de escrita da entrega", or mentions validar conformidade textual de trabalhos acadêmicos (PDF/DOCX) contra regras definidas. Classifica cada item como em compliance/não em compliance/não verificado, com detecção de tipo de arquivo (não avalia slides). NÃO usar para dar nota/conteúdo (usar avaliador-trabalhos-senac) nem para estrutura de TCC (usar tcc-ava-ia).
 version: 0.2.0
 ---
 
-> **Origem**: plataforma Adapta ONE (perfil do Juarez). Importada em 2026-10-01. Referencia a skill #Brainstorm como etapa inicial obrigatória (aqui: `brainstorm/`, na raiz deste repo).
+> **Origem**: plataforma Adapta ONE (perfil do Juarez). Importada em 2026-10-01. Referencia a skill `brainstorm/` como etapa inicial obrigatória (aqui: `brainstorm/`, na raiz deste repo).
 
 # Análise Textual de Entregas Acadêmicas
 

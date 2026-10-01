@@ -2,7 +2,7 @@
 
 Skills do meu agente pessoal (leao, rodando sobre GLM). Cada skill nasce de um **fluxo executado de verdade** — primeiro resolve a tarefa com o agente, depois empacota o que funcionou. Skill escrita de cabeça não entra aqui (as legadas ficam em v0.x até serem validadas).
 
-![Skills](https://img.shields.io/badge/skills-13-8a2be2) ![Validadas](https://img.shields.io/badge/validadas-3-4c1) ![Legadas](https://img.shields.io/badge/legadas_v0.x-10-f9a825)
+[![Validar skills](https://github.com/juarezbamberg-source/skills/actions/workflows/validar-skills.yml/badge.svg)](https://github.com/juarezbamberg-source/skills/actions/workflows/validar-skills.yml) ![Skills](https://img.shields.io/badge/skills-13-8a2be2) ![Validadas](https://img.shields.io/badge/validadas-3-4c1) ![Legadas](https://img.shields.io/badge/legadas_v0.x-10-f9a825)
 
 ## Organização (por finalidade)
 
@@ -96,6 +96,15 @@ Skills grandes **não** colocam tudo no corpo do SKILL.md. O corpo tem: gatilhos
 As descrições delimitam território para o agente não carregar a skill errada:
 - **triagem-cluster-metacortex** × **analise-remediacao-incidentes**: triagem K8s só-leitura ≠ incidente geral com remediação/post-mortem — cada descrição aponta a outra no "NÃO usar para".
 - **padrao-manifests-metacortex** × **containers-docker-kubernetes**: padrão da casa (escrita/conferência de manifests) ≠ containerização genérica — a de manifests prevalece para manifests da casa.
+
+## Validação contínua (CI)
+
+A cada push/PR, o workflow `validar-skills.yml` verifica:
+1. **Frontmatter** de todo SKILL.md: `name`, `description` (≥150 chars — gatilho de descoberta) e `version`.
+2. **Referências internas**: todo link `references/...` aponta para arquivo existente; skills irmãs citadas existem no repo.
+3. **Testes dos validadores**: `pytest`/script do validador de manifests (manifesto barrado DEVE reprovar — teste negativo como gate).
+
+Localmente: `python3 padrao-manifests-metacortex/tests/test_validador.py`.
 
 ## Uso
 

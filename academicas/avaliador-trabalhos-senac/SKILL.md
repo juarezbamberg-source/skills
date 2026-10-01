@@ -1,10 +1,10 @@
 ---
 name: avaliador-trabalhos-senac
-description: This skill should be used when the user asks for: Avalia trabalhos SENAC por UC: brainstorm, rubrica-base, parecer e SWOT — skill da plataforma Adapta ONE (perfil do Juarez, ativa no perfil). Importada para este repo em 2026-10-01. Progressive disclosure: regras globais no corpo, procedimentos detalhados sob demanda.
+description: This skill should be used when the user asks to "corrigir trabalhos dos alunos", "avaliar entregas da turma", "dar nota no trabalho", "parecer de avaliação", "avaliar por UC", "rubrica de correção", or mentions avaliar/corrigir entregas de alunos do SENAC por Unidade Curricular. Avalia por evidências com rubrica (A/PA/NA por indicador), SWOT e parecer estruturado; inicia com brainstorm da rodada (skill brainstorm/). NÃO usar para CRIAR provas (usar criar-provas-senac) nem para conformidade textual (usar analise-textual-academica).
 version: 0.2.0
 ---
 
-> **Origem**: plataforma Adapta ONE (perfil do Juarez). Importada em 2026-10-01. Referencia a skill #Brainstorm como etapa inicial obrigatória (aqui: `brainstorm/`, na raiz deste repo).
+> **Origem**: plataforma Adapta ONE (perfil do Juarez). Importada em 2026-10-01. Referencia a skill `brainstorm/` como etapa inicial obrigatória (aqui: `brainstorm/`, na raiz deste repo).
 
 # Avaliador de Trabalhos Acadêmicos — Reutilizável por Rodada (SENAC)
 
@@ -14,7 +14,7 @@ version: 0.2.0
 - A rubrica e os critérios de cada rodada são definidos no brainstorm inicial, usando as rubricas-base por UC como referência.
 
 ## 2. Regras globais (sempre ativas)
-- INICIAR SEMPRE pela skill filha #Brainstorm para validar os dados da rodada.
+- INICIAR SEMPRE pela skill `brainstorm/` (raiz deste repo) para validar os dados da rodada.
 - Aplicar progressive disclosure: carregar procedimentos específicos (rubrica, bandeiras, parecer) somente quando a etapa exigir; manter referências detalhadas sob demanda.
 - Avaliar por evidências, nunca por impressões.
 - Ler o conjunto inteiro da entrega antes de marcar qualquer indicador.
@@ -50,7 +50,7 @@ Níveis: A/PA/NA.
 ## 5. Procedimentos (carregar sob demanda)
 
 ### 5.1 Brainstorm (obrigatório)
-- Chamar a skill #Brainstorm e validar: disciplina/UC, conteúdo, nº de trabalhos, critérios de avaliação, rubrica (nova ou reuso de rubrica-base), formato da entrega e prazo.
+- Chamar a skill `brainstorm/` e validar: disciplina/UC, conteúdo, nº de trabalhos, critérios de avaliação, rubrica (nova ou reuso de rubrica-base), formato da entrega e prazo.
 - Não avançar enquanto houver lacuna fundamental.
 
 ### 5.2 Rubrica da rodada
