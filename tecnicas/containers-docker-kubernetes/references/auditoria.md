@@ -1,8 +1,4 @@
----
-name: auditoria-dockerfiles
-description: This skill should be used when the user asks to "auditoria de dockerfiles" — skill importada da plataforma anterior (legado, sem fluxo executado anexado). Framework técnico de auditoria comparativa de Dockerfiles
-version: 0.1.0
----
+# Modo auditoria: revisar Dockerfiles
 
 > **Origem**: exportada da plataforma anterior (pasta Drive "skills-Adapta/inativas"), status legado "inativa/backup". Importada para o repo em 2026-10-01 para consolidação; ainda sem validação de descoberta/execução neste agente.
 

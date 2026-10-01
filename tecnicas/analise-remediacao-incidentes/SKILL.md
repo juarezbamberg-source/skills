@@ -1,7 +1,7 @@
 ---
 name: analise-remediacao-incidentes
-description: This skill should be used when the user asks to "análise e remediação de incidentes de produção" — skill importada da plataforma anterior (legado, sem fluxo executado anexado). Framework para triagem, diagnóstico, remediação e post-mortem de incidentes.
-version: 0.1.0
+description: This skill should be used when the user asks to "analisar incidente de produção", "post-mortem", "remediar incidente", "parar o sangramento", "análise de causa raiz com remediação" — incidentes de produção EM GERAL (app, banco, infra), incluindo remediação em 2 fases e post-mortem. NÃO usar para triagem somente-leitura de cluster Kubernetes (usar triagem-cluster-metacortex, que é o método de plantão de K8s). Framework completo legado (triagem → diagnóstico → remediação → validação → post-mortem).
+version: 0.2.0
 ---
 
 > **Origem**: exportada da plataforma anterior (pasta Drive "skills-Adapta/inativas"), status legado "inativa/backup". Importada para o repo em 2026-10-01 para consolidação; ainda sem validação de descoberta/execução neste agente.

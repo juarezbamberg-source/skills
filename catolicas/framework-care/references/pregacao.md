@@ -1,8 +1,4 @@
----
-name: pregacao-framework-care
-description: This skill should be used when the user asks to "pregação com framework c-a-r-e" — skill importada da plataforma anterior (legado, sem fluxo executado anexado). Gera pregações estruturadas no framework C-A-R-E a partir de leituras e tom
-version: 0.1.0
----
+# Aplicação: Pregação (C-A-R-E)
 
 > **Origem**: exportada da plataforma anterior (pasta Drive "skills-Adapta/inativas"), status legado "inativa/backup". Importada para o repo em 2026-10-01 para consolidação; ainda sem validação de descoberta/execução neste agente.
 

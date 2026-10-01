@@ -1,6 +1,6 @@
 ---
 name: triagem-cluster-metacortex
-description: This skill should be used when the user reports a Kubernetes incident or symptom — "o pod não sobe", "deployment 0/3", "service sem endpoint", "503 no serviço", "pod reiniciando", "CrashLoopBackOff", "ImagePullBackOff", "OOMKilled", "aplicação fora do ar no cluster", "por que o X está quebrado" — e pede diagnóstico/triagem. Executa um método de leitura determinístico sobre o cluster via mcp-server-kubernetes (modo não destrutivo): nunca aplica, edita ou deleta nada. NÃO usar para revisar YAML antes de aplicar (usar a skill do padrão de manifests), para criar manifests do zero, ou para provisionar infraestrutura (VMs, clusters).
+description: This skill should be used when the user reports a Kubernetes incident or symptom — "o pod não sobe", "deployment 0/3", "service sem endpoint", "503 no serviço", "pod reiniciando", "CrashLoopBackOff", "ImagePullBackOff", "OOMKilled", "aplicação fora do ar no cluster", "por que o X está quebrado" — e pede diagnóstico/triagem. Executa um método de leitura determinístico sobre o cluster via mcp-server-kubernetes (modo não destrutivo): nunca aplica, edita ou deleta nada. NÃO usar para revisar YAML antes de aplicar (usar a skill do padrão de manifests), para criar manifests do zero, para provisionar infraestrutura (VMs, clusters), ou para incidentes de produção com remediação/post-mortem fora do cluster (usar analise-remediacao-incidentes).
 version: 1.0.0
 ---
 

@@ -1,8 +1,4 @@
----
-name: ambiente-docker-kubernetes
-description: This skill should be used when the user asks to "ambiente docker e kubernetes" — skill importada da plataforma anterior (legado, sem fluxo executado anexado). Containerização completa com Docker e deploy em Kubernetes
-version: 0.1.0
----
+# Modo escrita: containerizar + manifests
 
 > **Origem**: exportada da plataforma anterior (pasta Drive "skills-Adapta/inativas"), status legado "inativa/backup". Importada para o repo em 2026-10-01 para consolidação; ainda sem validação de descoberta/execução neste agente.
 
