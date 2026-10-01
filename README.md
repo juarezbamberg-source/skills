@@ -2,12 +2,14 @@
 
 Skills do meu agente pessoal (leao, rodando sobre GLM). Cada skill nasce de um **fluxo executado de verdade** — primeiro resolve a tarefa com o agente, depois empacota o que funcionou. Skill escrita de cabeça não entra aqui (as legadas ficam em v0.x até serem validadas).
 
-![Skills](https://img.shields.io/badge/skills-8-8a2be2) ![Validadas](https://img.shields.io/badge/validadas-3-4c1) ![Legadas](https://img.shields.io/badge/legadas_v0.x-5-f9a825)
+![Skills](https://img.shields.io/badge/skills-13-8a2be2) ![Validadas](https://img.shields.io/badge/validadas-3-4c1) ![Legadas](https://img.shields.io/badge/legadas_v0.x-10-f9a825)
 
 ## Organização (por finalidade)
 
 ```
 skills/
+├── brainstorm/                   # maturação de ideias (raiz: porta de entrada do arco de spec)
+├── spec-prd-trd-adr/             # entrevista + PRD/TRD/ADR (raiz: transversal, usada no Desafio 03)
 ├── exercicio-devops-cloud-ia/    # metodologia completa de exercícios (raiz: transversal)
 ├── padrao-manifests-metacortex/  # manifests K8s da casa (raiz: validada em fluxo real)
 ├── triagem-cluster-metacortex/   # triagem de cluster K8s (raiz: validada em fluxo real)
@@ -16,8 +18,12 @@ skills/
 │   ├── analise-remediacao-incidentes/  # incidentes de produção gerais + post-mortem
 │   └── gerar-terraform/                # estrutura modular de Terraform
 ├── catolicas/                    # conteúdo católico
-│   └── framework-care/                 # pregação + adoração (fusão 2026-10-01)
-└── academicas/                   # trabalho acadêmico
+│   └── framework-care/                 # pregação + adoração + homilia (3 aplicações do C-A-R-E)
+└── academicas/                   # trabalho acadêmico e docência
+    ├── planejamento-aulas-informatica/ # aulas + UC5-8 (competências oficiais em references/)
+    ├── criar-provas-senac/             # criação de provas SENAC
+    ├── avaliador-trabalhos-senac/      # avaliação de trabalhos por UC
+    ├── analise-textual-academica/      # validação de conformidade textual
     └── tcc-ava-ia/                     # TCC de plataforma AVA com IA
 ```
 
@@ -28,6 +34,13 @@ skills/
 | [`exercicio-devops-cloud-ia/`](exercicio-devops-cloud-ia/) | 1.1.0 | Método completo para transformar enunciado/padrão em repo sustentável: spec primeiro, policy as code, CI/CD com gate humano, auditoria. Inclui playbook de ambiente (kind no Windows + túnel cloudflared + auth por token). | Exercício Metacortex (MBA DevOps) + Desafio 03 |
 | [`padrao-manifests-metacortex/`](padrao-manifests-metacortex/) | 1.0.0 | Gera e confere manifests Kubernetes no padrão da casa. Script para regras mecânicas, instrução para o que exige ler o projeto, mapeamento Trivy para não reimplementar. | Desafio 03, Ticket 01 |
 | [`triagem-cluster-metacortex/`](triagem-cluster-metacortex/) | 1.0.0 | Método único de triagem de incidentes Kubernetes: sintoma → camadas fixas → cruzamento de fontes → veredito de 4 linhas. Só leitura. | Desafio 03, Ticket 02 |
+
+## Raiz — transversais (spec e metodologia)
+
+| Skill | Versão | O que faz | Status |
+|---|---|---|---|
+| [`brainstorm/`](brainstorm/) | 0.2.0 | Maturação colaborativa de ideias ANTES de especificar: entender → análise crítica → iterar → fechamento com decisões e pontos em aberto. Porta de entrada do arco de spec. | Adapta ONE (ativa); usada no Desafio 03 |
+| [`spec-prd-trd-adr/`](spec-prd-trd-adr/) | 0.2.0 | Entrevista guiada (máx. 3 perguntas/rodada) e geração de PRD/TRD/ADR reutilizáveis. Playbook no corpo; templates fixos em `references/`. | Adapta ONE (ativa); base dos specs do Desafio 03 |
 
 ## tecnicas/ — infraestrutura e operação
 
@@ -41,9 +54,17 @@ skills/
 
 | Skill | Versão | O que faz | Status |
 |---|---|---|---|
-| [`framework-care/`](catolicas/framework-care/) | 0.2.0 | Framework C-A-R-E com duas aplicações: pregação (a partir das leituras do dia) e adoração ao Santíssimo Sacramento (meditações + músicas). Corpo tem o núcleo; roteiros completos em `references/`. | Legado, fundida de 2 skills; pendente de validação |
+| [`framework-care/`](catolicas/framework-care/) | 0.3.0 | Framework C-A-R-E com três aplicações: pregação, adoração ao Santíssimo Sacramento e homilia (10 min). Corpo tem o núcleo; roteiros completos em `references/`. | Adapta ONE + fusões; pendente de validação |
 
-## academicas/ — trabalho acadêmico
+## academicas/ — trabalho acadêmico e docência
+
+| Skill | Versão | O que faz | Status |
+|---|---|---|---|
+| [`planejamento-aulas-informatica/`](academicas/planejamento-aulas-informatica/) | 0.2.0 | Planejamento de aulas, exercícios, slides, análise de lacunas e guia noob para técnico em informática. Competências oficiais UC5–UC8 em `references/`. | Adapta ONE + fusão; pendente de validação |
+| [`criar-provas-senac/`](academicas/criar-provas-senac/) | 0.2.0 | Criação de provas SENAC: brainstorm inicial, versões por grupo, gabarito, rubrica, ficha de assinatura e entrega por e-mail. | Adapta ONE; pendente de validação |
+| [`avaliador-trabalhos-senac/`](academicas/avaliador-trabalhos-senac/) | 0.2.0 | Avaliador de trabalhos por UC: brainstorm da rodada, rubrica-base, correção por evidências, SWOT e parecer. | Adapta ONE; pendente de validação |
+| [`analise-textual-academica/`](academicas/analise-textual-academica/) | 0.2.0 | Validação de conformidade textual de entregas acadêmicas (com detecção de tipo de arquivo — não avalia slides). | Adapta ONE; pendente de validação |
+| [`tcc-ava-ia/`](academicas/tcc-ava-ia/) | 0.1.0 | Estrutura e validação de TCC de plataforma AVA inteligente (RAG, visão computacional, análise comportamental). | Adapta ONE; pendente de validação |
 
 | Skill | Versão | O que faz | Status |
 |---|---|---|---|

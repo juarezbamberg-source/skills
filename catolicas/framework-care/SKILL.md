@@ -1,7 +1,7 @@
 ---
 name: framework-care
 description: This skill should be used when the user asks to "gerar pregação", "estruturar pregação com framework CARE", "preparar adoração ao Santíssimo Sacramento", "adoro-te devote", "meditações para adoração", ou mencionar o framework C-A-R-E para conteúdo católico (Contexto, Análise/A arquitetura, Reflexão/Roteiro, Encerramento/Execução). Duas aplicações: pregações a partir das leituras do dia e adoração com meditações contemplativas + músicas. O framework comum está neste corpo; os roteiros específicos de cada aplicação ficam em references/ (progressive disclosure).
-version: 0.2.0
+version: 0.3.0
 ---
 
 > **Origem**: fusão de duas skills legadas da plataforma anterior (pregacao-framework-care + adorote-devote, pasta Drive "skills-Adapta/inativas"), consolidadas em 2026-10-01. O framework C-A-R-E é comum às duas; o que muda é a aplicação — cada roteiro completo vive em `references/`. Ainda sem validação de descoberta/execução neste agente (v0.x).
@@ -16,6 +16,7 @@ Framework para estruturar conteúdo católico falado/cantado: **C**ontexto, **A*
 |---|---|---|
 | Pregação a partir das leituras do dia | [`references/pregacao.md`](references/pregacao.md) | Contexto → Análise → Reflexão → Encerramento |
 | Adoração ao Santíssimo Sacramento (radiofônica ou presencial) | [`references/adoracao.md`](references/adoracao.md) | Contexto → Arquitetura (progressão espiritual) → Roteiro → Execução |
+| Homilia (pregação oral de exatamente 10 min, 900–1.100 palavras) | [`references/homilia.md`](references/homilia.md) | Contexto → Análise → Reflexão → Encerramento |
 
 ## Núcleo comum do framework
 
