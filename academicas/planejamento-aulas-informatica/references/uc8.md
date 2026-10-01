@@ -1,4 +1,4 @@
-# SKILL FILHA: UC8 — Projeto Integrador Assistente de Operação de Redes (pai: #Planejamento de Aulas — Técnico em Informática)
+# SKILL FILHA: UC8 — Projeto Integrador Assistente de Operação de Redes (pai: `planejamento-aulas-informatica/` — Técnico em Informática)
 
 ## CAMADA 1 — OBJETIVO E ESCOPO
 Estruturar e avaliar o Projeto Integrador (PI) da UC8 do Técnico em Informática (Senac), que consolida as competências das UC5, UC6 e UC7 (instalação, manutenção e servidores de redes locais). Diferente das UCs de conteúdo, a UC8 é um projeto com metodologia ação-reflexão-ação. Não gera plano de aula de conteúdo — organiza o PI e sua avaliação. Carga horária: 20h.
@@ -30,9 +30,9 @@ UC8: Projeto Integrador Assistente de Operação de Redes de Computadores. Carga
 5. Apontar lacunas e sugerir correções de forma clara e acionável.
 
 ## CAMADA 5 — INTEGRAÇÃO COM SKILLS EXISTENTES
-- Usar #Avaliador_Provas_ModRedes para o fluxo de avaliação por UC (brainstorm, rubrica-base, parecer e SWOT).
-- Usar #Análise Textual de Trabalhos Acadêmicos para validar conformidade textual das entregas.
-- Usar #Planejamento de Aulas para gerar material de apoio às fases do PI, se necessário.
+- Usar `avaliador-trabalhos-senac/` para o fluxo de avaliação por UC (brainstorm, rubrica-base, parecer e SWOT).
+- Usar `analise-textual-academica/` para validar conformidade textual das entregas.
+- Usar `planejamento-aulas-informatica/` para gerar material de apoio às fases do PI, se necessário.
 
 ## CAMADA 6 — REFERÊNCIA COMPLETA (sob demanda)
 - Texto integral oficial: Plano de Curso Técnico em Informática (Tecnico_em_Informatica_MPS_1_.pdf), seção 6 (orientações metodológicas do Projeto Integrador) e indicadores de avaliação do PI.
