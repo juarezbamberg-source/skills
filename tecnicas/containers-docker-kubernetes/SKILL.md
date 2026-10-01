@@ -28,3 +28,14 @@ version: 0.2.0
 2. **Por arquivo**: forças, fraquezas com gravidade (Crítica/Alta/Média/Baixa), oportunidades, ameaças.
 3. **Tabela comparativa** obrigatória: multi-stage, usuário não-root, healthcheck **que existe na imagem base** (crítico!), build deps mínimas, instruções duplicadas, ENV multi-linha, secrets como ENV vazio, `HEALTHCHECK --retries`.
 4. **Veredito** com justificativa técnica e boilerplate quando pedido.
+
+## Permissões que a skill pede
+
+- **Leitura do projeto** (arquivos locais ou clone público) para descobrir porta/healthcheck/env no modo escrita.
+- **Leitura de Dockerfiles** enviados no modo auditoria.
+- **Execução de validação local quando disponível** (docker build, kubeconform) — somente leitura dos artefatos.
+- **Não pede**: push de imagens, deploy em cluster, ou qualquer escrita fora do workspace.
+
+## Histórico
+
+- 0.2.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

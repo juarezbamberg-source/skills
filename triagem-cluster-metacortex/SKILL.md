@@ -77,3 +77,7 @@ CONFORTO: <o que continua funcionando ao lado (banco, outros pods)>
 ## Origem
 
 Nasceu do fluxo executado em 2026-09-30 (Desafio 03, Ticket 02): 3 chamados reais reproduzidos no cluster de laboratório (nyx-prod OOMKilled por limit de 24Mi; orion-stg com tag inexistente v1.14.2; nyx-stg com selector `nyx-api` vs labels `nyxapi` → Endpoints `<none>`), triados com este método antes de serem escritos. Provas e saídas reais em `../execucao/`.
+
+## Histórico
+
+- 1.0.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

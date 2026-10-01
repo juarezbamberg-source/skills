@@ -60,3 +60,21 @@ version: 0.2.0
 - Ser generoso e didático (alunos iniciantes).
 - Não inventar dados; marcar incertezas.
 - Confirmar dados essenciais via brainstorm antes de gerar os documentos finais.
+
+## Permissões que a skill pede
+
+- **Geração de arquivos** (prova, gabarito, rubrica, ficha de assinatura) no workspace — o usuário confirma nomes antes de gravar.
+- **Envio de e-mail** com a prova ao término — SEMPRE com confirmação explícita do usuário (destinatários e anexo na tela antes de enviar); nunca envia sem pedido.
+- **Não pede**: acesso a sistemas acadêmicos, notas, dados pessoais de alunos além dos nomes fornecidos.
+
+## Critério de prontidão
+
+A prova está pronta para gerar quando estão definidos: disciplina/UC, formato (teórica/prática), individual ou grupo (e quantos), conteúdo avaliado, prazo de entrega e destino dos arquivos. Se qualquer desses puder mudar o formato da prova, permanecer no brainstorm.
+
+## Saída esperada
+
+Por versão: `prova_V<N>.pdf` (aluno, SEM gabarito) + `prova_V<N>_prof.pdf` (com gabarito e rubrica) + ficha de assinatura (grupo) — nomes conferidos antes de gravar; e-mail enviado só com confirmação explícita.
+
+## Histórico
+
+- 0.2.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

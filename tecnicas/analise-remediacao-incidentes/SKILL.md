@@ -141,3 +141,13 @@ Sem alertas disparados
 - **Mitigação é rápida, correção é gradual**: Parar o sangramento é urgente; corrigir é cuidadoso
 - **Valide cada passo**: Não assuma que funcionou; confirme com métricas
 - **Documente tudo**: Post-mortem é aprendizado para a equipe
+
+## Permissões que a skill pede
+
+- **Leitura** de logs, métricas e status fornecidos pelo usuário ou acessíveis pelo contexto.
+- **Proposição de comandos de remediação** — a execução é do plantonista; a skill sugere com risco e validação de cada ação.
+- **Não pede**: execução direta de mudanças em produção; toda ação passa pelo usuário.
+
+## Histórico
+
+- 0.2.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

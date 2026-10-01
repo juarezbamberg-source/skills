@@ -38,3 +38,19 @@ Framework para estruturar conteúdo católico falado/cantado: **C**ontexto, **A*
 - Leituras: Evangelho do dia, Primeira Leitura, Salmo, Leitura Livre (referência digitada).
 - Tom: lista acima ou descrição customizada.
 - Para adoração: duração total (padrão 45–50 min, 6 meditações + 6 músicas).
+
+## Permissões que a skill pede
+
+- **Nenhuma ação externa** — gera apenas texto (pregação, homilia, roteiro de adoração) na conversa ou em arquivo quando pedido.
+
+## Critério de prontidão
+
+A peça está pronta para gerar quando estão definidos: aplicação (pregação/homilia/adoração), leituras ou tema, tom (lista ou customizado) e duração alvo. Sem leitura definida, permanecer na coleta.
+
+## Saída esperada
+
+Texto completo pronto para leitura em voz (pregação 8-10 min de leitura; homilia 900-1.100 palavras; adoração: 6 meditações + 6 músicas com transições e tempos), na conversa ou em arquivo quando pedido.
+
+## Histórico
+
+- 0.3.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

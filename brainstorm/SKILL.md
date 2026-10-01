@@ -70,3 +70,11 @@ Consulte esta lista apenas quando a etapa atual exigir uma pergunta corresponden
 
 ## 6. Critério de prontidão
 Considere a ideia pronta para fechamento quando houver clareza suficiente sobre problema, público, objetivo, proposta central, restrições, riscos principais, critério de sucesso e decisões pendentes. Se algum desses itens ainda puder mudar radicalmente a direção, permaneça na etapa de Entendimento ou Análise crítica.
+
+## Permissões que a skill pede
+
+- **Nenhuma ação externa** — conversa, perguntas e análise; não gera arquivos nem executa nada até o usuário pedir explicitamente o próximo passo.
+
+## Histórico
+
+- 0.2.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

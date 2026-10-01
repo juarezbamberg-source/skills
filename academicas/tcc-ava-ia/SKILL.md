@@ -148,3 +148,21 @@ Você está desenvolvendo uma **Prova de Conceito (PoC)** de um Ambiente Virtual
 - "Crie um diagrama de [componente técnico]"
 - "Valide minha metodologia contra o checklist"
 - "Me ajude a aprofundar [tópico específico]"
+
+## Permissões que a skill pede
+
+- **Leitura de arquivos enviados** (capítulos do TCC em PDF/DOCX) para análise de coerência.
+- **Geração de diagramas Mermaid e templates** de documentação.
+- **Não pede**: acesso a repositórios externos, sistemas acadêmicos, ou envio de qualquer coisa.
+
+## Critério de prontidão
+
+Pronto para gerar quando estão definidos: capítulo/seção alvo, o que o usuário quer (estrutura, análise de coerência, referências, diagrama) e a versão atual do material.
+
+## Saída esperada
+
+Análise com itens marcados (ok/lacuna/sugestão com fonte), ou template preenchido, ou diagrama Mermaid — conforme o pedido, nunca tudo de uma vez.
+
+## Histórico
+
+- 0.1.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

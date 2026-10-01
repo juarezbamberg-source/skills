@@ -91,3 +91,13 @@ Níveis: A/PA/NA.
 - Entrega parcial → avaliar o que foi entregue, registrando a incompletude como fator crítico.
 - Sinais de plágio → não atribuir conceito definitivo sem oportunidade de defesa oral.
 - Trabalho individual → suprimir ou adaptar o indicador de equipe para "autogestão e organização".
+
+## Permissões que a skill pede
+
+- **Leitura de e-mails e anexos** dos trabalhos enviados para correção.
+- **Geração do parecer** (documento de avaliação) no workspace.
+- **Não pede**: envio de e-mail aos alunos (o parecer é entregue ao professor, que decide o retorno), acesso a sistemas de notas.
+
+## Histórico
+
+- 0.2.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

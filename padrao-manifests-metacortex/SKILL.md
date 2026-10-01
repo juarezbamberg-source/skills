@@ -69,3 +69,7 @@ Dado um projeto para gerar manifests:
 ## Origem
 
 Nasceu do fluxo executado em 2026-09-30 (Desafio 03, Ticket 01): primeiro conferiu-se o manifesto barrado do ticket e geraram-se os manifests de kube-news e fake-shop lendo os projetos; depois o que funcionou foi empacotado. Ferramenta: agente (leao) com script Python próprio + Trivy v0.74.0 + kubeconform v0.8.0. Evidências: `../execucao/`.
+
+## Histórico
+
+- 1.0.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

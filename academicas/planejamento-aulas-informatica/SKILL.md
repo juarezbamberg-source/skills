@@ -128,3 +128,21 @@ Fluxo:
 - [`references/uc6.md`](references/uc6.md) — UC6 Manutenção de Redes Locais (96h)
 - [`references/uc7.md`](references/uc7.md) — UC7 Servidores de Redes Locais (96h)
 - [`references/uc8.md`](references/uc8.md) — UC8 Projeto Integrador (20h): fases e temas geradores
+
+## Permissões que a skill pede
+
+- **Pesquisa na web** (normas ABNT/NBR, NRs, fontes acadêmicas, vídeos) para embasar conteúdo.
+- **Geração de documentos** (planejamento Word/PDF, slides, exercícios, guia noob) no workspace.
+- **Não pede**: acesso a sistemas da instituição, dados de alunos, envio de e-mail.
+
+## Critério de prontidão
+
+O planejamento está pronto para gerar quando estão definidos: disciplina/tema, carga horária (dias × horas-aula) e quais entregáveis o usuário quer (planejamento, exercícios, slides, lacunas, guia noob). Dados já fornecidos não se reperguntam.
+
+## Saída esperada
+
+Planejamento em Word/PDF (objetivo, conteúdo, metodologia, sequência didática, materiais, referências) + os entregáveis escolhidos, com fontes/vídeos citados na análise de lacunas.
+
+## Histórico
+
+- 0.2.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

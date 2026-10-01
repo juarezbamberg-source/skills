@@ -101,10 +101,14 @@ As descrições delimitam território para o agente não carregar a skill errada
 
 A cada push/PR, o workflow `validar-skills.yml` verifica:
 1. **Frontmatter** de todo SKILL.md: `name`, `description` (≥150 chars — gatilho de descoberta) e `version`.
+2. **Permissões**: toda skill declara o que pede e o que **não** pede (seção "Permissões que a skill pede") — skills que agem no mundo (e-mail, infra, arquivos) são auditáveis.
+3. **Histórico**: toda skill tem `## Histórico` no rodapé (registro de falhas e mudanças entra aí — a skill viva).
 2. **Referências internas**: todo link `references/...` aponta para arquivo existente; skills irmãs citadas existem no repo.
 3. **Testes dos validadores**: `pytest`/script do validador de manifests (manifesto barrado DEVE reprovar — teste negativo como gate).
 
 Localmente: `python3 padrao-manifests-metacortex/tests/test_validador.py`.
+
+**Método de manutenção** (aplicado via brainstorm 2026-10-01): skills geradoras têm critério de prontidão e saída esperada; M5 (idioma único nas descriptions) foi avaliado e **descartado** — o mix EN/PT funciona no roteamento atual e o custo de mexer em 14 arquivos não se justifica.
 
 ## Uso
 

@@ -182,3 +182,14 @@ regras que não podem ser improvisadas:
 - Publicar repo sem LICENSE/topics/release.
 - Configurar "3 camadas" no README quando o pipeline tem 4.
 - Deixar o README descrever um fluxo que o repo não pratica.
+
+## Histórico
+
+- 1.1.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.
+
+## Permissões que a skill pede
+
+- **Criação/manipulação de repositório** (gh CLI/git): criar repo, branches, PRs, workflows — sempre no repo do exercício, nunca fora dele.
+- **Execução de validação local** (pytest, kubeconform, trivy, scripts Python) sobre os artefatos do exercício.
+- **Push para o GitHub** no repo do exercício (via gh/git com as credenciais do usuário).
+- **Não pede**: acesso a clusters de produção, segredos além dos placeholders, ou qualquer sistema fora do repo do exercício.

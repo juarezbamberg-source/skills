@@ -49,3 +49,12 @@ Contexto suficiente quando objetivo, público, escopo e restrições principais 
 - [`references/template-prd.md`](references/template-prd.md) — 6 seções, critérios de aceite Gherkin, regras de allowlist e checklist.
 - [`references/template-trd.md`](references/template-trd.md) — NFRs quantificados, arquitetura/contratos, modelo de dados, stack verificada.
 - [`references/template-adr.md`](references/template-adr.md) — frontmatter YAML, contexto, alternativas (mín. 2), decisão, consequências, fontes.
+
+## Permissões que a skill pede
+
+- **Geração de documentos markdown** (PRD/TRD/ADR) na conversa ou em arquivo quando pedido; se o usuário pedir Word/PDF, gera documento formatado.
+- **Não pede**: acesso a repositórios, sistemas, ou qualquer ação além da escrita dos artefatos.
+
+## Histórico
+
+- 0.2.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

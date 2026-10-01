@@ -115,3 +115,12 @@ Toda a saída da avaliação deve ser em **HTML com estilos inline**, pronta par
 - Não inventar informações; basear-se apenas no material fornecido e nas regras do documento de referência.
 - Manter linguagem objetiva, consistente e uniforme em todas as avaliações.
 - Se o documento de regras não cobrir um item, marcá-lo como "não verificado" com observação.
+
+## Permissões que a skill pede
+
+- **Leitura de arquivos enviados** (PDF/DOCX ou texto colado) — nada é gravado além do relatório de análise.
+- **Não pede**: envio de e-mail, acesso a sistemas, ou qualquer escrita fora do relatório.
+
+## Histórico
+
+- 0.2.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

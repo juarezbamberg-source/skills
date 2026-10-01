@@ -125,3 +125,12 @@ Com comentários guia em cada seção para o usuário adaptar.
 ✅ **Futuro**: Geração de testes Terraform (terratest)  
 ✅ **Futuro**: Documentação automática (terraform-docs)  
 ✅ **Futuro**: Análise de custo (infracost)
+
+## Permissões que a skill pede
+
+- **Geração de arquivos Terraform** no diretório do projeto (providers/variables/main/outputs/locals/tfvars.example).
+- **Não pede**: executar `terraform apply/plan` — a skill gera código, nunca provisiona; rodar é decisão e ação do usuário. Nenhum acesso a cloud, credenciais ou estado (state).
+
+## Histórico
+
+- 0.1.0 (2026-10-01): estado atual — ver seção Origem acima para a procedência completa.

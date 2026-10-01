@@ -39,6 +39,23 @@ jobs:
           print(f"OK: {len(list(Path('.').rglob('SKILL.md')))} skills com frontmatter válido")
           EOF
 
+      - name: Gate de permissões (toda skill declara o que pede e o que não pede)
+        run: |
+          python3 - <<'EOF'
+          from pathlib import Path
+          import sys
+          erros = []
+          for f in sorted(Path('.').rglob('SKILL.md')):
+              s = f.read_text(encoding='utf-8')
+              if '## Permissões que a skill pede' not in s:
+                  erros.append(f"{f}: sem seção de permissões")
+              if '## Histórico' not in s:
+                  erros.append(f"{f}: sem histórico de versões")
+          if erros:
+              print('\n'.join(erros)); sys.exit(1)
+          print("OK: permissões e histórico em todas as skills")
+          EOF
+
       - name: Checar referências entre skills (caminhos existem)
         run: |
           python3 - <<'EOF'
