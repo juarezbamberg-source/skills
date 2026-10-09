@@ -2,7 +2,7 @@
 
 Skills do meu agente pessoal (leao, rodando sobre GLM). Cada skill nasce de um **fluxo executado de verdade** — primeiro resolve a tarefa com o agente, depois empacota o que funcionou. Skill escrita de cabeça não entra aqui (as legadas ficam em v0.x até serem validadas).
 
-[![Validar skills](https://github.com/juarezbamberg-source/skills/actions/workflows/validar-skills.yml/badge.svg)](https://github.com/juarezbamberg-source/skills/actions/workflows/validar-skills.yml) ![Skills](https://img.shields.io/badge/skills-13-8a2be2) ![Validadas](https://img.shields.io/badge/validadas-3-4c1) ![Legadas](https://img.shields.io/badge/legadas_v0.x-10-f9a825)
+[![Validar skills](https://github.com/juarezbamberg-source/skills/actions/workflows/validar-skills.yml/badge.svg)](https://github.com/juarezbamberg-source/skills/actions/workflows/validar-skills.yml) ![Skills](https://img.shields.io/badge/skills-11-8a2be2) ![Validadas](https://img.shields.io/badge/validadas-1-4c1) ![Legadas](https://img.shields.io/badge/legadas_v0.x-10-f9a825)
 
 ## Organização (por finalidade)
 
@@ -11,8 +11,6 @@ skills/
 ├── brainstorm/                   # maturação de ideias (raiz: porta de entrada do arco de spec)
 ├── spec-prd-trd-adr/             # entrevista + PRD/TRD/ADR (raiz: transversal, usada no Desafio 03)
 ├── exercicio-devops-cloud-ia/    # metodologia completa de exercícios (raiz: transversal)
-├── padrao-manifests-metacortex/  # manifests K8s da casa (raiz: validada em fluxo real)
-├── triagem-cluster-metacortex/   # triagem de cluster K8s (raiz: validada em fluxo real)
 ├── tecnicas/                     # infraestrutura e operação
 │   ├── containers-docker-kubernetes/   # Docker + K8s: escrita e auditoria (fusão 2026-10-01)
 │   ├── analise-remediacao-incidentes/  # incidentes de produção gerais + post-mortem
@@ -32,8 +30,6 @@ skills/
 | Skill | Versão | O que faz | Origem |
 |---|---|---|---|
 | [`exercicio-devops-cloud-ia/`](exercicio-devops-cloud-ia/) | 1.1.0 | Método completo para transformar enunciado/padrão em repo sustentável: spec primeiro, policy as code, CI/CD com gate humano, auditoria. Inclui playbook de ambiente (kind no Windows + túnel cloudflared + auth por token). | Exercício Metacortex (MBA DevOps) + Desafio 03 |
-| [`padrao-manifests-metacortex/`](padrao-manifests-metacortex/) | 1.0.0 | Gera e confere manifests Kubernetes no padrão da casa. Script para regras mecânicas, instrução para o que exige ler o projeto, mapeamento Trivy para não reimplementar. | Desafio 03, Ticket 01 |
-| [`triagem-cluster-metacortex/`](triagem-cluster-metacortex/) | 1.0.0 | Método único de triagem de incidentes Kubernetes: sintoma → camadas fixas → cruzamento de fontes → veredito de 4 linhas. Só leitura. | Desafio 03, Ticket 02 |
 
 ## Raiz — transversais (spec e metodologia)
 
@@ -94,8 +90,6 @@ Skills grandes **não** colocam tudo no corpo do SKILL.md. O corpo tem: gatilhos
 ## Roteamento entre skills (descrições cruzadas)
 
 As descrições delimitam território para o agente não carregar a skill errada:
-- **triagem-cluster-metacortex** × **analise-remediacao-incidentes**: triagem K8s só-leitura ≠ incidente geral com remediação/post-mortem — cada descrição aponta a outra no "NÃO usar para".
-- **padrao-manifests-metacortex** × **containers-docker-kubernetes**: padrão da casa (escrita/conferência de manifests) ≠ containerização genérica — a de manifests prevalece para manifests da casa.
 
 ## Validação contínua (CI)
 
@@ -104,11 +98,13 @@ A cada push/PR, o workflow `validar-skills.yml` verifica:
 2. **Permissões**: toda skill declara o que pede e o que **não** pede (seção "Permissões que a skill pede") — skills que agem no mundo (e-mail, infra, arquivos) são auditáveis.
 3. **Histórico**: toda skill tem `## Histórico` no rodapé (registro de falhas e mudanças entra aí — a skill viva).
 2. **Referências internas**: todo link `references/...` aponta para arquivo existente; skills irmãs citadas existem no repo.
-3. **Testes dos validadores**: `pytest`/script do validador de manifests (manifesto barrado DEVE reprovar — teste negativo como gate).
 
-Localmente: `python3 padrao-manifests-metacortex/tests/test_validador.py`.
 
 **Método de manutenção** (aplicado via brainstorm 2026-10-01): skills geradoras têm critério de prontidão e saída esperada; M5 (idioma único nas descriptions) foi avaliado e **descartado** — o mix EN/PT funciona no roteamento atual e o custo de mexer em 14 arquivos não se justifica.
+
+## Nota de escopo (2026-10-09)
+
+As skills do desafio Metacortex (padrão de manifests e triagem de cluster) foram **removidas deste repo** — são entregas específicas do exercício e vivem no repo dele: [juarezbamberg-source/Sistemas-Metacortex](https://github.com/juarezbamberg-source/Sistemas-Metacortex) (ticket-01 e ticket-02). Este repo mantém apenas skills de uso geral e transversais.
 
 ## Uso
 

@@ -82,15 +82,3 @@ jobs:
           print("OK: referências internas válidas")
           EOF
 
-  testes:
-    name: Testes dos validadores
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Instalar pyyaml
-        run: pip install pyyaml
-
-      - name: Rodar testes do validador de manifests
-        run: python3 padrao-manifests-metacortex/tests/test_validador.py

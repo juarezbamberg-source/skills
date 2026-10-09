@@ -1,6 +1,6 @@
 ---
 name: containers-docker-kubernetes
-description: This skill should be used when the user asks to "containerizar aplicação", "criar Dockerfile", "dockerizar", "auditar/revisar Dockerfile", "comparar Dockerfiles", "otimizar imagem Docker", "boilerplate Docker", "deploy genérico em Kubernetes", or mentions Docker/Compose/Kubernetes para uma app SEM padrão da casa. Dois modos: escrita (containerizar + manifests lendo o projeto) e auditoria (revisar Dockerfiles com notas e tabela comparativa); método de cada modo em references/. NÃO usar quando houver padrão de manifests da casa Metacortex (usar padrao-manifests-metacortex, que prevalece) nem para triagem de incidente em cluster (usar triagem-cluster-metacortex).
+description: This skill should be used when the user asks to "containerizar aplicação", "criar Dockerfile", "dockerizar", "auditar/revisar Dockerfile", "comparar Dockerfiles", "otimizar imagem Docker", "boilerplate Docker", "deploy genérico em Kubernetes", or mentions Docker/Compose/Kubernetes para uma app SEM padrão da casa. Dois modos: escrita (containerizar + manifests lendo o projeto) e auditoria (revisar Dockerfiles com notas e tabela comparativa); método de cada modo em references/. NÃO usar para triagem de incidente em cluster (usar tecnicas/analise-remediacao-incidentes para incidentes com remediação).
 version: 0.2.0
 ---
 

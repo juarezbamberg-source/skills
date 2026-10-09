@@ -1,6 +1,6 @@
 ---
 name: analise-remediacao-incidentes
-description: This skill should be used when the user asks to "analisar incidente de produção", "post-mortem", "remediar incidente", "parar o sangramento", "análise de causa raiz com remediação", "corrigir incidente em produção", or mentions incidentes de produção EM GERAL (app, banco, infra) com direito a remediação em 2 fases (mitigação + correção definitiva) e post-mortem documentado. Framework completo: triagem → diagnóstico (cadeia causal) → remediação → validação → post-mortem. NÃO usar para triagem somente-leitura de cluster Kubernetes (usar triagem-cluster-metacortex) nem quando a correção for proibida pelo contexto (a triagem K8s nunca corrige).
+description: This skill should be used when the user asks to "analisar incidente de produção", "post-mortem", "remediar incidente", "parar o sangramento", "análise de causa raiz com remediação", "corrigir incidente em produção", or mentions incidentes de produção EM GERAL (app, banco, infra) com direito a remediação em 2 fases (mitigação + correção definitiva) e post-mortem documentado. Framework completo: triagem → diagnóstico (cadeia causal) → remediação → validação → post-mortem. NÃO usar quando a correção for proibida pelo contexto de plantão (triagem somente-leitura exige método próprio, sem remediação).
 version: 0.2.0
 ---
 
