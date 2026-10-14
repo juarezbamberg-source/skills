@@ -4,7 +4,7 @@ description: "Use quando o usuário pedir para \"planejar aula\", \"plano de aul
 version: 0.4.0
 ---
 
-> **Origem**: skill da plataforma Adapta ONE + 4 skills filhas de competências oficiais (UC5–UC8), importadas em 2026-10-01 e adaptadas a outra plataforma em 2026-10-14; UC9 e UC10 extraídas do Plano de Curso em 2026-10-14. Usada no planejamento da UC5 (SENACRS Gravataí, 2026) e na produção do Bloco 7 (segurança).
+> **Origem**: skill da plataforma Adapta ONE + 4 skills filhas de competências oficiais (UC5–UC8), importadas em 2026-10-01 e adaptadas a esta plataforma em 2026-10-14. Usada no planejamento da UC5 (SENACRS Gravataí, 2026) e na produção do Bloco 7 (segurança).
 
 # SKILL: Planejamento de Aulas — Curso Técnico em Informática (3h/aula)
 
@@ -13,7 +13,7 @@ version: 0.4.0
 O corpo deste SKILL.md é o **núcleo** — regras estáveis que valem para toda UC. Os detalhes pesados (competências oficiais de cada UC) vivem em `references/` e **só são carregados quando necessários**:
 
 1. A descrição do frontmatter e este arquivo entram no contexto na descoberta — nada mais.
-2. Identificada a UC do pedido, carregar **apenas** `references/ucN.md` (N = 5, 6, 7, 8, 9 ou 10). NUNCA carregue todas de uma vez.
+2. Identificada a UC do pedido, chame `read_file` **apenas** em `skills/planejamento-aulas-informatica/references/ucN.md` (N = 5, 6, 7, 8, 9 ou 10). NUNCA carregue todas de uma vez.
 3. Se o pedido cobrir mais de uma UC (ex.: projeto integrador UC5+UC8), carregue só as citadas.
 4. Se o pedido não citar UC (tema solto de informática), NÃO carregue reference nenhuma — o núcleo basta.
 
@@ -32,7 +32,7 @@ Gerar planejamento de aulas, exercícios práticos, roteiros de slides, análise
 ## FLUXO DE USO
 
 ### Passo 1 — Coleta de informações
-Confirmar (máx. 3 perguntas; em chat web, um único formulário com as perguntas):
+Confirmar (máx. 3 perguntas; no web use um único `Form` do openui):
 - Disciplina/bloco e tema das aulas
 - Carga horária (dias × horas-aula por dia)
 - Quais entregáveis gerar (planejamento, slides, exercícios, lacunas, guia noob — múltipla escolha)
@@ -40,7 +40,7 @@ Confirmar (máx. 3 perguntas; em chat web, um único formulário com as pergunta
 Se o usuário já forneceu esses dados na mensagem, NÃO pergunte de novo — execute direto.
 
 ### Passo 2 — Carregar a referência da UC (progressive disclosure)
-Se houver UC citada (UC5–UC10): carregar `references/ucN.md` e use seus indicadores/conhecimentos/habilidades/valores como fonte de requisitos. Indicadores → eixos de avaliação; conhecimentos → teoria; habilidades → práticas; atitudes/valores → avaliação formativa.
+Se houver UC citada (UC5–UC10): `read_file` em `references/ucN.md` e use seus indicadores/conhecimentos/habilidades/valores como fonte de requisitos. Indicadores → eixos de avaliação; conhecimentos → teoria; habilidades → práticas; atitudes/valores → avaliação formativa.
 
 ### Passo 3 — Pesquisa de fontes
 - Buscar na web fontes fidedignas: normas ABNT (NBR 5410, 5419), NRs (NR-10), documentos acadêmicos, IEEE, ANSI/TIA, ITU
@@ -49,13 +49,13 @@ Se houver UC citada (UC5–UC10): carregar `references/ucN.md` e use seus indica
 - Buscar 1-2 vídeos do YouTube pertinentes quando útil
 
 ### Passo 4 — Geração de entregáveis
-Gerar na ordem solicitada, um artefato por vez:
-- **Planejamento** → DOCX (python-docx; padrão de cabeçalho SENACRS como nos roteiros do Bloco 7 da UC5)
-- **Slides** → PPTX (pptxgenjs) ou HTML→PDF (pipeline de apresentações) para maior qualidade visual; máximo 25 slides por conjunto
+Gerar na ordem solicitada, um artefato por vez. Ferramentas desta plataforma:
+- **Planejamento** → DOCX (skill `docx` ou python-docx; padrão de cabeçalho SENACRS como nos roteiros do Bloco 7 da UC5)
+- **Slides** → PPTX (skill `pptx`/pptxgenjs) ou HTML→PDF (skill `presentations`) para maior qualidade visual; máximo 25 slides por conjunto
 - **Exercícios** → integrar ao planejamento ou gerar documento separado
 - **Lacunas** → revisar o documento já gerado (ou entregar seção separada)
 - **Guia Noob** → DOCX separado, voltado para o aluno
-- Entregar tudo na pasta de artefatos da plataforma em uso
+- Entregar tudo em `artifacts/` e exibir com `share_file`/`send_file`
 
 ## REGRAS DE CONSISTÊNCIA
 
@@ -121,7 +121,7 @@ Usuário: "Conteúdo do bloco de Redes de Computadores, 2 aulas de 3h, gerar pla
 2. Se citada a UC: carregar só `references/ucN.md`.
 3. Pesquisar metodologias e fontes (ABNT/NRs).
 4. Gerar planejamento DOCX com estrutura completa.
-5. Gerar slides (até 25, pt-br, educational) e entregar na pasta de artefatos.
+5. Gerar slides (até 25, pt-br, educational) e entregar em `artifacts/`.
 
 ## References — competências oficiais (carregar só a UC em questão)
 
@@ -135,7 +135,7 @@ Usuário: "Conteúdo do bloco de Redes de Computadores, 2 aulas de 3h, gerar pla
 ## Permissões que a skill pede
 
 - **Pesquisa na web** (normas ABNT/NBR, NRs, fontes acadêmicas, vídeos) para embasar conteúdo.
-- **Geração de documentos** (planejamento DOCX/PDF, slides, exercícios, guia noob) na pasta de artefatos.
+- **Geração de documentos** (planejamento DOCX/PDF, slides, exercícios, guia noob) em `artifacts/`.
 - **Não pede**: acesso a sistemas da instituição, dados de alunos, envio de e-mail.
 
 ## Critério de prontidão
@@ -144,10 +144,10 @@ O planejamento está pronto para gerar quando estão definidos: disciplina/tema,
 
 ## Saída esperada
 
-Planejamento em DOCX/PDF (objetivo, conteúdo, metodologia, sequência didática, materiais, referências) + os entregáveis escolhidos, com fontes/vídeos citados.
+Planejamento em DOCX/PDF (objetivo, conteúdo, metodologia, sequência didática, materiais, referências) + os entregáveis escolhidos, com fontes/vídeos citados, todos em `artifacts/`.
 
 ## Histórico
 
 - 0.4.0 (2026-10-14): UC9 (Desenvolver Algoritmos, 108h) e UC10 (Desenvolver Banco de Dados, 72h) adicionadas em references/ — competências e indicadores extraídos do Plano de Curso Técnico em Informática (MPS); descrição e regras de disclosure atualizadas (uc5–uc10).
-- 0.3.0 (2026-10-14): técnica de progressive disclosure documentada explicitamente na seção própria; tools do Adapta ONE substituídas por equivalentes genéricos (geração de DOCX/PPTX, formulário de perguntas); references/uc5–uc8 preservadas.
+- 0.3.0 (2026-10-14): adaptada à plataforma leao — tools do Adapta ONE substituídas (documentGenerate→docx/python-docx, presentation→pptx/presentations, askQuestions→Form openui), saída em artifacts/ via share_file; técnica de progressive disclosure documentada explicitamente na seção própria; references/uc5–uc8 preservadas.
 - 0.2.0 (2026-10-01): estado original — ver seção Origem.
